@@ -1,0 +1,21 @@
+
+body {
+  background-color: #000 !important;
+  color: #FFD700 !important;
+  font-size: 1.3em !important;
+  line-height: 1.6em !important;
+}
+
+a, h1, h2, h3, h4, h5, h6 {
+  color: #FFD700 !important;
+}
+
+button {
+  background-color: #FFD700 !important;
+  color: #000 !important;
+  font-weight: bold;
+}
+
+img {
+  opacity: 0.8;
+}

@@ -48,5 +48,35 @@
     <p>© 2025 Natural Beauty. Все права защищены.</p>
     <button onclick="location.href='index.html?style=accessible'">Версия для слабовидящих</button>
   </footer>
+  <button onclick="toggleAccessibility()" id="accessibility-btn" style="position: fixed; top: 10px; right: 10px; z-index: 1000;">
+  Версия для слабовидящих
+  </button>
+
+  <script>
+  function toggleAccessibility() {
+    const current = localStorage.getItem('accessible');
+      if (current === 'enabled') {
+        document.getElementById('accessible-css')?.remove();
+        localStorage.setItem('accessible', 'disabled');
+      } else {
+        const link = document.createElement('link');
+        link.id = 'accessible-css';
+        link.rel = 'stylesheet';
+        link.href = 'accessible.css';
+        document.head.appendChild(link);
+        localStorage.setItem('accessible', 'enabled');
+     }
+   }
+
+   window.addEventListener('load', () => {
+     if (localStorage.getItem('accessible') === 'enabled') {
+       const link = document.createElement('link');
+       link.id = 'accessible-css';
+       link.rel = 'stylesheet';
+       link.href = 'accessible.css';
+     document.head.appendChild(link);
+  }
+  });
+  </script>
 </body>
 </html>
